@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://yhflvdx11t0c"]
+
+[ext_resource type="Script" uid="uid://dbydihkcbipya" path="res://coin.gd" id="1_2nhvj"]
+[ext_resource type="Texture2D" uid="uid://cxkeu7hmpkjm4" path="res://pngtree-gold-dollar-coin-png-image_3975554-removebg-preview.png" id="2_qqtat"]
+[ext_resource type="AudioStream" uid="uid://bqoc01kjcy7oa" path="res://coin-ogg.ogg" id="3_qqtat"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e31bg"]
+radius = 39.3
+
+[node name="coin" type="Area2D"]
+position = Vector2(2, -2)
+script = ExtResource("1_2nhvj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2638889, 0.2611111)
+texture = ExtResource("2_qqtat")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_e31bg")
+
+[node name="CollectSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_qqtat")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

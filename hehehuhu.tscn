@@ -1,0 +1,112 @@
+[gd_scene load_steps=10 format=3 uid="uid://ci0fylcw6ko66"]
+
+[ext_resource type="Script" uid="uid://gnuuho507765" path="res://hehehuhu.gd" id="1_a1406"]
+[ext_resource type="Texture2D" uid="uid://mmildn543hyo" path="res://The_desolate_streets_of_Shibuya_29.webp" id="1_ei2s8"]
+[ext_resource type="PackedScene" uid="uid://c3iwci0iaj57s" path="res://player.tscn" id="1_l1w5w"]
+[ext_resource type="PackedScene" uid="uid://chkh8i7tvqv5l" path="res://obstacle.tscn" id="3_0lwa2"]
+[ext_resource type="PackedScene" uid="uid://jlbc1muft01g" path="res://obstacle2.tscn" id="4_cxf14"]
+[ext_resource type="PackedScene" uid="uid://yhflvdx11t0c" path="res://tileset/coin.tscn" id="5_4llkk"]
+[ext_resource type="PackedScene" uid="uid://k8l2ahsifrtd" path="res://sukuna.tscn" id="6_a1406"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ei2s8"]
+size = Vector2(3770, 31)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0lwa2"]
+size = Vector2(27, 1128.5)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_a1406")
+
+[node name="BG" type="Sprite2D" parent="."]
+position = Vector2(299.99994, -558)
+scale = Vector2(4.4268947, 3.285905)
+texture = ExtResource("1_ei2s8")
+
+[node name="gojo" parent="." instance=ExtResource("1_l1w5w")]
+position = Vector2(-16.999998, 313.99997)
+speed = 500.0
+jump_velocity = -500.0
+
+[node name="floor" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor"]
+position = Vector2(1229, 722.5)
+shape = SubResource("RectangleShape2D_ei2s8")
+
+[node name="boundry" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boundry"]
+position = Vector2(-625.5, 121.75)
+shape = SubResource("RectangleShape2D_0lwa2")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="boundry"]
+position = Vector2(3081, 124)
+shape = SubResource("RectangleShape2D_0lwa2")
+
+[node name="StaticBody2D" parent="." instance=ExtResource("3_0lwa2")]
+position = Vector2(687, 587)
+
+[node name="StaticBody2D6" parent="." instance=ExtResource("3_0lwa2")]
+position = Vector2(1603, 587)
+
+[node name="StaticBody2D7" parent="." instance=ExtResource("3_0lwa2")]
+position = Vector2(2740, 596)
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("3_0lwa2")]
+position = Vector2(1037, 587)
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("3_0lwa2")]
+position = Vector2(2465, 587)
+
+[node name="StaticBody2D4" parent="." instance=ExtResource("4_cxf14")]
+position = Vector2(2173, 501)
+
+[node name="StaticBody2D8" parent="." instance=ExtResource("4_cxf14")]
+position = Vector2(1789, 495.99997)
+
+[node name="StaticBody2D5" parent="." instance=ExtResource("4_cxf14")]
+position = Vector2(1126, 493.99997)
+
+[node name="coin" parent="." instance=ExtResource("5_4llkk")]
+position = Vector2(608, 623)
+
+[node name="coin2" parent="." instance=ExtResource("5_4llkk")]
+position = Vector2(1135, 551)
+
+[node name="coin3" parent="." instance=ExtResource("5_4llkk")]
+position = Vector2(1581, 651)
+
+[node name="coin4" parent="." instance=ExtResource("5_4llkk")]
+position = Vector2(1832, 645)
+
+[node name="coin5" parent="." instance=ExtResource("5_4llkk")]
+position = Vector2(2322, 510)
+
+[node name="coin6" parent="." instance=ExtResource("5_4llkk")]
+position = Vector2(2454, 658)
+
+[node name="coin7" parent="." instance=ExtResource("5_4llkk")]
+position = Vector2(2843, 558)
+
+[node name="sukuna" parent="." instance=ExtResource("6_a1406")]
+position = Vector2(948.00006, 627)
+
+[node name="sukuna2" parent="." instance=ExtResource("6_a1406")]
+position = Vector2(1300, 471)
+
+[node name="sukuna3" parent="." instance=ExtResource("6_a1406")]
+position = Vector2(1714, 515)
+
+[node name="sukuna4" parent="." instance=ExtResource("6_a1406")]
+position = Vector2(2128, 637)
+
+[node name="sukuna5" parent="." instance=ExtResource("6_a1406")]
+position = Vector2(2715, 640)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="ScoreLabel" type="Label" parent="UI"]
+offset_left = 2748.0
+offset_top = 12.0
+offset_right = 2815.0
+offset_bottom = 58.0

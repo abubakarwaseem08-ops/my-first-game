@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://jlbc1muft01g"]
+
+[ext_resource type="Texture2D" uid="uid://c32j3dn1bc2rc" path="res://tileset/rock2-removebg-preview.png" id="1_lk1g2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bgjat"]
+size = Vector2(68, 125)
+
+[node name="obstacle2" type="StaticBody2D"]
+scale = Vector2(1.395, 1.395)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(121.999985, 99)
+scale = Vector2(0.27808988, 0.19472183)
+texture = ExtResource("1_lk1g2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(120, 101.5)
+shape = SubResource("RectangleShape2D_bgjat")

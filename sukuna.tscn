@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://k8l2ahsifrtd"]
+
+[ext_resource type="Script" uid="uid://c0vno5l025knq" path="res://sukuna.gd" id="1_1d072"]
+[ext_resource type="Texture2D" uid="uid://soomle2wsvjw" path="res://sukuna-removebg-preview.png" id="2_fpuq5"]
+[ext_resource type="AudioStream" uid="uid://c48irlee7i26p" path="res://game-over-arcade-6435.ogg" id="3_fpuq5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ehg6m"]
+size = Vector2(166.88, 386.382)
+
+[node name="sukuna" type="Area2D"]
+scale = Vector2(1.475, 1.475)
+script = ExtResource("1_1d072")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.26699996, 0.233)
+texture = ExtResource("2_fpuq5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.26699996, 0.233)
+shape = SubResource("RectangleShape2D_ehg6m")
+
+[node name="GameOverSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_fpuq5")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
