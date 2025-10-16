@@ -1,0 +1,104 @@
+[gd_scene load_steps=16 format=3 uid="uid://3rltq1i7v60d"]
+
+[ext_resource type="Script" uid="uid://col6ilambpjxj" path="res://checkpoints/victory_flag.gd" id="1_jlvpc"]
+[ext_resource type="Texture2D" uid="uid://b5pn31w76tdgl" path="res://levels/items/Items/Checkpoints/Checkpoint/Checkpoint (Flag Idle)(64x64).png" id="2_l1r7r"]
+[ext_resource type="AudioStream" uid="uid://bbybkxodlvkew" path="res://music/champions-victory-winner-background-music-414706.mp3" id="3_xcclg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1dg2"]
+atlas = ExtResource("2_l1r7r")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_brrp4"]
+atlas = ExtResource("2_l1r7r")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_it8oy"]
+atlas = ExtResource("2_l1r7r")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1knfu"]
+atlas = ExtResource("2_l1r7r")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_grl5f"]
+atlas = ExtResource("2_l1r7r")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a2nxu"]
+atlas = ExtResource("2_l1r7r")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_71sus"]
+atlas = ExtResource("2_l1r7r")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n64my"]
+atlas = ExtResource("2_l1r7r")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_08o8o"]
+atlas = ExtResource("2_l1r7r")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3lukt"]
+atlas = ExtResource("2_l1r7r")
+region = Rect2(576, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sfffl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1dg2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_brrp4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_it8oy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1knfu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_grl5f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a2nxu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_71sus")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n64my")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_08o8o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3lukt")
+}],
+"loop": true,
+"name": &"wave",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jlvpc"]
+size = Vector2(26, 20)
+
+[node name="VictoryFlag" type="Area2D"]
+script = ExtResource("1_jlvpc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_sfffl")
+animation = &"wave"
+frame = 7
+frame_progress = 0.70390046
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_xcclg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, 2)
+shape = SubResource("RectangleShape2D_jlvpc")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

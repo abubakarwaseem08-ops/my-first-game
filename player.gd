@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
-@export var speed: float = 200.0
-@export var jump_velocity: float = -400.0
-var gravity: float = 900.0
+@export var speed: float = 100.0
+@export var jump_velocity: float = -200.0
+var gravity: float = 700.0
 
 func _ready():
 	print("Player ready")

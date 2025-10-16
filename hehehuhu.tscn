@@ -1,112 +1,191 @@
-[gd_scene load_steps=10 format=3 uid="uid://ci0fylcw6ko66"]
+[gd_scene load_steps=20 format=3 uid="uid://ci0fylcw6ko66"]
 
 [ext_resource type="Script" uid="uid://gnuuho507765" path="res://hehehuhu.gd" id="1_a1406"]
-[ext_resource type="Texture2D" uid="uid://mmildn543hyo" path="res://The_desolate_streets_of_Shibuya_29.webp" id="1_ei2s8"]
 [ext_resource type="PackedScene" uid="uid://c3iwci0iaj57s" path="res://player.tscn" id="1_l1w5w"]
-[ext_resource type="PackedScene" uid="uid://chkh8i7tvqv5l" path="res://obstacle.tscn" id="3_0lwa2"]
-[ext_resource type="PackedScene" uid="uid://jlbc1muft01g" path="res://obstacle2.tscn" id="4_cxf14"]
-[ext_resource type="PackedScene" uid="uid://yhflvdx11t0c" path="res://tileset/coin.tscn" id="5_4llkk"]
-[ext_resource type="PackedScene" uid="uid://k8l2ahsifrtd" path="res://sukuna.tscn" id="6_a1406"]
+[ext_resource type="Texture2D" uid="uid://dx1cggai1f0pk" path="res://background/Background layers/Layer_0011_0.png" id="2_owp05"]
+[ext_resource type="Texture2D" uid="uid://dxkuglfiumpis" path="res://background/Background layers/Layer_0010_1.png" id="3_vx83y"]
+[ext_resource type="Texture2D" uid="uid://du61n558082hs" path="res://background/Background layers/Layer_0009_2.png" id="4_lfrbx"]
+[ext_resource type="Texture2D" uid="uid://dvkyx5d8hhowo" path="res://background/Background layers/Layer_0008_3.png" id="5_alk0o"]
+[ext_resource type="Texture2D" uid="uid://bmrdndl23u4fy" path="res://background/Background layers/Layer_0007_Lights.png" id="6_ytcun"]
+[ext_resource type="Texture2D" uid="uid://b1ofbh71h012t" path="res://background/Background layers/Layer_0006_4.png" id="7_meehv"]
+[ext_resource type="PackedScene" uid="uid://u2hpxg0nvu1a" path="res://game_over_ui.tscn" id="8_efxho"]
+[ext_resource type="Texture2D" uid="uid://gdey4w1vmrbr" path="res://background/Background layers/Layer_0005_5.png" id="8_rnrr7"]
+[ext_resource type="Texture2D" uid="uid://c3p2ojwfv0485" path="res://background/Background layers/Layer_0004_Lights.png" id="9_ddwug"]
+[ext_resource type="Texture2D" uid="uid://c7cyw0pqnmc6q" path="res://background/Background layers/Layer_0003_6.png" id="10_cdf0e"]
+[ext_resource type="Texture2D" uid="uid://8bwn630fwo8e" path="res://background/Background layers/Layer_0002_7.png" id="11_hnxxj"]
+[ext_resource type="Texture2D" uid="uid://pjj5ohbjir05" path="res://background/Background layers/Layer_0001_8.png" id="12_3231h"]
+[ext_resource type="Texture2D" uid="uid://dwa4skfotvxea" path="res://background/Background layers/Layer_0000_9.png" id="13_sel8r"]
+[ext_resource type="Script" uid="uid://4ucvwyykqlu3" path="res://level_builder.gd" id="17_c7qe4"]
+[ext_resource type="AudioStream" uid="uid://c878tfleex47p" path="res://music/the-magic-forest-340326.ogg" id="20_vx83y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ei2s8"]
-size = Vector2(3770, 31)
+size = Vector2(3770, 0)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0lwa2"]
 size = Vector2(27, 1128.5)
 
-[node name="Node2D" type="Node2D"]
+[node name="Main" type="Node2D"]
+position = Vector2(0, 1)
 script = ExtResource("1_a1406")
 
-[node name="BG" type="Sprite2D" parent="."]
-position = Vector2(299.99994, -558)
-scale = Vector2(4.4268947, 3.285905)
-texture = ExtResource("1_ei2s8")
+[node name="layer0" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.05, 1)
+repeat_size = Vector2(928, 0)
+repeat_times = 30
+
+[node name="Sprite2D" type="Sprite2D" parent="layer0"]
+position = Vector2(7000, 324)
+scale = Vector2(1.5, 1)
+texture = ExtResource("2_owp05")
+
+[node name="layer1" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.15, 1)
+repeat_size = Vector2(928, 0)
+repeat_times = 30
+
+[node name="Sprite2D" type="Sprite2D" parent="layer1"]
+position = Vector2(7000, 324)
+scale = Vector2(1.5, 1)
+texture = ExtResource("3_vx83y")
+
+[node name="layer2" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.25, 1)
+repeat_size = Vector2(928, 0)
+repeat_times = 30
+
+[node name="Sprite2D" type="Sprite2D" parent="layer2"]
+position = Vector2(7000, 324)
+scale = Vector2(1.5, 1)
+texture = ExtResource("4_lfrbx")
+
+[node name="layer3" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.35, 1)
+repeat_size = Vector2(928, 0)
+repeat_times = 30
+
+[node name="Sprite2D" type="Sprite2D" parent="layer3"]
+position = Vector2(7000, 324)
+scale = Vector2(1.5, 1)
+texture = ExtResource("5_alk0o")
+
+[node name="layer4" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.45, 1)
+repeat_size = Vector2(928, 0)
+repeat_times = 30
+
+[node name="Sprite2D" type="Sprite2D" parent="layer4"]
+position = Vector2(7000, 324)
+scale = Vector2(1.5, 1)
+texture = ExtResource("6_ytcun")
+
+[node name="layer5" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.55, 1)
+repeat_size = Vector2(928, 0)
+repeat_times = 30
+
+[node name="Sprite2D" type="Sprite2D" parent="layer5"]
+position = Vector2(7000, 324)
+scale = Vector2(1.5, 1)
+texture = ExtResource("7_meehv")
+
+[node name="layer6" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.65, 1)
+repeat_size = Vector2(928, 0)
+repeat_times = 30
+
+[node name="Sprite2D" type="Sprite2D" parent="layer6"]
+position = Vector2(7000, 324)
+scale = Vector2(1.5, 1)
+texture = ExtResource("8_rnrr7")
+
+[node name="layer7" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.7, 1)
+repeat_size = Vector2(928, 0)
+repeat_times = 30
+
+[node name="Sprite2D" type="Sprite2D" parent="layer7"]
+position = Vector2(7000, 324)
+scale = Vector2(1.5, 1)
+texture = ExtResource("9_ddwug")
+
+[node name="layer8" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.75, 1)
+repeat_size = Vector2(928, 0)
+repeat_times = 30
+
+[node name="Sprite2D" type="Sprite2D" parent="layer8"]
+position = Vector2(7000, 324)
+scale = Vector2(1.5, 1)
+texture = ExtResource("10_cdf0e")
+
+[node name="layer9" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.82, 1)
+repeat_size = Vector2(928, 0)
+repeat_times = 30
+
+[node name="Sprite2D" type="Sprite2D" parent="layer9"]
+position = Vector2(7000, 324)
+scale = Vector2(1.5, 1)
+texture = ExtResource("11_hnxxj")
+
+[node name="layer10" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.89, 1)
+repeat_size = Vector2(928, 0)
+repeat_times = 30
+
+[node name="Sprite2D" type="Sprite2D" parent="layer10"]
+position = Vector2(7000, 324)
+scale = Vector2(1.5, 1)
+texture = ExtResource("12_3231h")
+
+[node name="layer11" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.95, 1)
+repeat_size = Vector2(928, 0)
+repeat_times = 30
+
+[node name="Sprite2D" type="Sprite2D" parent="layer11"]
+position = Vector2(7000, 324)
+scale = Vector2(1.5, 1)
+texture = ExtResource("13_sel8r")
 
 [node name="gojo" parent="." instance=ExtResource("1_l1w5w")]
-position = Vector2(-16.999998, 313.99997)
-speed = 500.0
-jump_velocity = -500.0
+position = Vector2(0, 650)
 
 [node name="floor" type="StaticBody2D" parent="."]
+scale = Vector2(5000, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="floor"]
-position = Vector2(1229, 722.5)
+position = Vector2(1240, 710)
 shape = SubResource("RectangleShape2D_ei2s8")
 
 [node name="boundry" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="boundry"]
-position = Vector2(-625.5, 121.75)
+position = Vector2(-98, 155)
 shape = SubResource("RectangleShape2D_0lwa2")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="boundry"]
-position = Vector2(3081, 124)
+position = Vector2(25000, 167)
 shape = SubResource("RectangleShape2D_0lwa2")
-
-[node name="StaticBody2D" parent="." instance=ExtResource("3_0lwa2")]
-position = Vector2(687, 587)
-
-[node name="StaticBody2D6" parent="." instance=ExtResource("3_0lwa2")]
-position = Vector2(1603, 587)
-
-[node name="StaticBody2D7" parent="." instance=ExtResource("3_0lwa2")]
-position = Vector2(2740, 596)
-
-[node name="StaticBody2D2" parent="." instance=ExtResource("3_0lwa2")]
-position = Vector2(1037, 587)
-
-[node name="StaticBody2D3" parent="." instance=ExtResource("3_0lwa2")]
-position = Vector2(2465, 587)
-
-[node name="StaticBody2D4" parent="." instance=ExtResource("4_cxf14")]
-position = Vector2(2173, 501)
-
-[node name="StaticBody2D8" parent="." instance=ExtResource("4_cxf14")]
-position = Vector2(1789, 495.99997)
-
-[node name="StaticBody2D5" parent="." instance=ExtResource("4_cxf14")]
-position = Vector2(1126, 493.99997)
-
-[node name="coin" parent="." instance=ExtResource("5_4llkk")]
-position = Vector2(608, 623)
-
-[node name="coin2" parent="." instance=ExtResource("5_4llkk")]
-position = Vector2(1135, 551)
-
-[node name="coin3" parent="." instance=ExtResource("5_4llkk")]
-position = Vector2(1581, 651)
-
-[node name="coin4" parent="." instance=ExtResource("5_4llkk")]
-position = Vector2(1832, 645)
-
-[node name="coin5" parent="." instance=ExtResource("5_4llkk")]
-position = Vector2(2322, 510)
-
-[node name="coin6" parent="." instance=ExtResource("5_4llkk")]
-position = Vector2(2454, 658)
-
-[node name="coin7" parent="." instance=ExtResource("5_4llkk")]
-position = Vector2(2843, 558)
-
-[node name="sukuna" parent="." instance=ExtResource("6_a1406")]
-position = Vector2(948.00006, 627)
-
-[node name="sukuna2" parent="." instance=ExtResource("6_a1406")]
-position = Vector2(1300, 471)
-
-[node name="sukuna3" parent="." instance=ExtResource("6_a1406")]
-position = Vector2(1714, 515)
-
-[node name="sukuna4" parent="." instance=ExtResource("6_a1406")]
-position = Vector2(2128, 637)
-
-[node name="sukuna5" parent="." instance=ExtResource("6_a1406")]
-position = Vector2(2715, 640)
 
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="ScoreLabel" type="Label" parent="UI"]
-offset_left = 2748.0
-offset_top = 12.0
-offset_right = 2815.0
-offset_bottom = 58.0
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -67.0
+offset_bottom = 46.0
+grow_horizontal = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="GameOverUI" parent="." instance=ExtResource("8_efxho")]
+visible = false
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_vx83y")
+volume_db = -13.358
+autoplay = true
+
+[node name="LevelBuilder" type="Node" parent="."]
+script = ExtResource("17_c7qe4")

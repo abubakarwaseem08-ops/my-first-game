@@ -11,10 +11,11 @@ config_version=5
 [application]
 
 config/name="MyFirstGame"
-run/main_scene="uid://p407m5jp6l40"
+run/main_scene="uid://bnw22tf5b3rw5"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 SoundManager="*res://soundmanager.gd"
+SceneTransition="*res://scene_transition.tscn"

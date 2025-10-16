@@ -1,24 +1,80 @@
-[gd_scene load_steps=5 format=3 uid="uid://yhflvdx11t0c"]
+[gd_scene load_steps=10 format=3 uid="uid://yhflvdx11t0c"]
 
 [ext_resource type="Script" uid="uid://dbydihkcbipya" path="res://coin.gd" id="1_2nhvj"]
-[ext_resource type="Texture2D" uid="uid://cxkeu7hmpkjm4" path="res://pngtree-gold-dollar-coin-png-image_3975554-removebg-preview.png" id="2_qqtat"]
+[ext_resource type="Texture2D" uid="uid://dpch21phe2pbj" path="res://levels/items/coins.png" id="2_qqtat"]
 [ext_resource type="AudioStream" uid="uid://bqoc01kjcy7oa" path="res://coin-ogg.ogg" id="3_qqtat"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e31bg"]
+atlas = ExtResource("2_qqtat")
+region = Rect2(0, 0, 40, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kgmjw"]
+atlas = ExtResource("2_qqtat")
+region = Rect2(0, 44, 40, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_44hgi"]
+atlas = ExtResource("2_qqtat")
+region = Rect2(0, 88, 40, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6bgqx"]
+atlas = ExtResource("2_qqtat")
+region = Rect2(0, 132, 40, 44)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_10u0s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e31bg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kgmjw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_44hgi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6bgqx")
+}],
+"loop": true,
+"name": &"spin",
+"speed": 10.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e31bg"]
 radius = 39.3
 
 [node name="coin" type="Area2D"]
-position = Vector2(2, -2)
+scale = Vector2(0.6, 0.6)
 script = ExtResource("1_2nhvj")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.2638889, 0.2611111)
-texture = ExtResource("2_qqtat")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_10u0s")
+animation = &"spin"
+frame = 3
+frame_progress = 0.5610889
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_e31bg")
 
 [node name="CollectSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_qqtat")
+
+[node name="SparkleParticles" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 30
+one_shot = true
+explosiveness = 1.0
+randomness = 0.5
+fixed_fps = 30
+emission_shape = 1
+emission_sphere_radius = 5.0
+direction = Vector2(0, -1)
+spread = 180.0
+gravity = Vector2(0, 300)
+initial_velocity_min = 80.0
+initial_velocity_max = 150.0
+scale_amount_min = 3.0
+scale_amount_max = 3.0
+color = Color(1, 0.84313726, 0, 1)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -3,16 +3,17 @@
 [ext_resource type="Texture2D" uid="uid://c32j3dn1bc2rc" path="res://tileset/rock2-removebg-preview.png" id="1_lk1g2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bgjat"]
-size = Vector2(68, 125)
+size = Vector2(68, 122.500015)
 
 [node name="obstacle2" type="StaticBody2D"]
-scale = Vector2(1.395, 1.395)
+scale = Vector2(0.8, 0.8)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(121.999985, 99)
-scale = Vector2(0.27808988, 0.19472183)
+position = Vector2(0, 99)
+scale = Vector2(0.3, 0.2)
 texture = ExtResource("1_lk1g2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(120, 101.5)
+position = Vector2(0, 103.75)
+scale = Vector2(0.9999997, 0.9999997)
 shape = SubResource("RectangleShape2D_bgjat")

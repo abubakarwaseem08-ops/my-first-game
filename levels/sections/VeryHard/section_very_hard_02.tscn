@@ -1,0 +1,64 @@
+[gd_scene load_steps=4 format=3 uid="uid://5vp7cpuk5jwv"]
+
+[ext_resource type="PackedScene" uid="uid://jlbc1muft01g" path="res://obstacle2.tscn" id="1_bope3"]
+[ext_resource type="PackedScene" uid="uid://yhflvdx11t0c" path="res://tileset/coin.tscn" id="2_dvjt4"]
+[ext_resource type="PackedScene" uid="uid://k8l2ahsifrtd" path="res://sukuna.tscn" id="3_is3rt"]
+
+[node name="Section_VeryHard_02" type="Node2D"]
+
+[node name="StartMarker" type="Marker2D" parent="."]
+
+[node name="EndMarker" type="Marker2D" parent="."]
+position = Vector2(1200, 0)
+
+[node name="Obstacles" type="Node2D" parent="."]
+
+[node name="TallRock1" parent="Obstacles" instance=ExtResource("1_bope3")]
+position = Vector2(350, 600)
+scale = Vector2(0.8, 0.2)
+
+[node name="TallRock2" parent="Obstacles" instance=ExtResource("1_bope3")]
+position = Vector2(550, 500)
+scale = Vector2(0.8, 0.2)
+
+[node name="TallRock3" parent="Obstacles" instance=ExtResource("1_bope3")]
+position = Vector2(700, 550)
+scale = Vector2(0.8, 0.2)
+
+[node name="TallRock4" parent="Obstacles" instance=ExtResource("1_bope3")]
+position = Vector2(850, 450)
+scale = Vector2(0.8, 0.2)
+
+[node name="TallRock5" parent="Obstacles" instance=ExtResource("1_bope3")]
+position = Vector2(1000, 600)
+
+[node name="Coins" type="Node2D" parent="."]
+
+[node name="coin" parent="Coins" instance=ExtResource("2_dvjt4")]
+position = Vector2(350, 570)
+
+[node name="coin2" parent="Coins" instance=ExtResource("2_dvjt4")]
+position = Vector2(550, 480)
+
+[node name="coin3" parent="Coins" instance=ExtResource("2_dvjt4")]
+position = Vector2(700, 530)
+
+[node name="coin4" parent="Coins" instance=ExtResource("2_dvjt4")]
+position = Vector2(850, 430)
+
+[node name="coin5" parent="Coins" instance=ExtResource("2_dvjt4")]
+position = Vector2(1000, 600)
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="sukuna" parent="Enemies" instance=ExtResource("3_is3rt")]
+position = Vector2(300, 690)
+
+[node name="sukuna2" parent="Enemies" instance=ExtResource("3_is3rt")]
+position = Vector2(450, 580)
+
+[node name="sukuna3" parent="Enemies" instance=ExtResource("3_is3rt")]
+position = Vector2(610, 560)
+
+[node name="sukuna4" parent="Enemies" instance=ExtResource("3_is3rt")]
+position = Vector2(790, 530)

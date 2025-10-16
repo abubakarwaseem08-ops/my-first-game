@@ -1,0 +1,82 @@
+[gd_scene load_steps=4 format=3 uid="uid://bnw22tf5b3rw5"]
+
+[ext_resource type="Script" uid="uid://dff1fb88hamtl" path="res://main_menu.gd" id="1_7vrkn"]
+[ext_resource type="Texture2D" uid="uid://bks0ddvpe8cu0" path="res://player/Ninja Frog/Game menu - Edited.jpg" id="2_fu7sn"]
+[ext_resource type="AudioStream" uid="uid://d21pkrr25nrt6" path="res://music/midnight-forest-184304.ogg" id="3_fu7sn"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -1.0
+offset_right = 1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7vrkn")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_fu7sn")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(300, 400)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -31.5
+offset_right = 20.0
+offset_bottom = 31.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="TitleLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "FOREST RUNNER"
+horizontal_alignment = 1
+
+[node name="spacer" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="PlayButton" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(1, 0.64705884, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0.84313726, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "PLAY"
+
+[node name="SettingsButton" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(1, 0.64705884, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0.84313726, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "SETTINGS"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(1, 0.64705884, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0.84313726, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "QUIT"
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_fu7sn")
+volume_db = -5.0
+autoplay = true

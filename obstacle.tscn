@@ -6,12 +6,13 @@
 size = Vector2(97, 115)
 
 [node name="obstacle1" type="StaticBody2D"]
+scale = Vector2(0.5, 0.5)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(108, 74)
+position = Vector2(0, 74)
 scale = Vector2(0.6864407, 0.6052632)
 texture = ExtResource("1_sl1jc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(103, 71)
+position = Vector2(0, 71)
 shape = SubResource("RectangleShape2D_aubd6")

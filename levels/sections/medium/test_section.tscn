@@ -1,0 +1,48 @@
+[gd_scene load_steps=11 format=3 uid="uid://dlawcr58v1edy"]
+
+[ext_resource type="PackedScene" uid="uid://c3iwci0iaj57s" path="res://player.tscn" id="1_jphbu"]
+[ext_resource type="PackedScene" uid="uid://ico302b1cfpt" path="res://levels/sections/medium/section_medium_01.tscn" id="2_j37ry"]
+[ext_resource type="PackedScene" uid="uid://7w6hcxdj60v2" path="res://levels/sections/medium/section_medium_02.tscn" id="3_fpks7"]
+[ext_resource type="PackedScene" uid="uid://olwxtbheohfq" path="res://levels/sections/medium/section_medium_03.tscn" id="4_7mdct"]
+[ext_resource type="PackedScene" uid="uid://dan35ku1hyi8d" path="res://levels/sections/hard/section_hard_04.tscn" id="5_j7k73"]
+[ext_resource type="PackedScene" uid="uid://b0p2okm66ax6a" path="res://levels/sections/VeryHard/section_very_hard_01.tscn" id="6_ethr2"]
+[ext_resource type="PackedScene" uid="uid://5vp7cpuk5jwv" path="res://levels/sections/VeryHard/section_very_hard_02.tscn" id="7_ba2ue"]
+[ext_resource type="PackedScene" uid="uid://b5q61ej53vkvk" path="res://levels/sections/VeryHard/section_very_hard_03.tscn" id="8_kgd4m"]
+[ext_resource type="PackedScene" uid="uid://dsxx0ng6dsarx" path="res://levels/sections/VeryHard/section_very_hard_04.tscn" id="9_u7x04"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j37ry"]
+size = Vector2(20000, 0)
+
+[node name="TestSection" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1240.03, 710)
+shape = SubResource("RectangleShape2D_j37ry")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_jphbu")]
+position = Vector2(100, 600)
+
+[node name="Section_Medium_01" parent="." instance=ExtResource("2_j37ry")]
+
+[node name="Section_Medium_02" parent="." instance=ExtResource("3_fpks7")]
+position = Vector2(900, 0)
+
+[node name="Section_Medium_03" parent="." instance=ExtResource("4_7mdct")]
+position = Vector2(1900, 0)
+
+[node name="Section_Hard_04" parent="." instance=ExtResource("5_j7k73")]
+position = Vector2(2750, 0)
+
+[node name="Section_VeryHard_01" parent="." instance=ExtResource("6_ethr2")]
+position = Vector2(4250, 0)
+
+[node name="Section_VeryHard_02" parent="." instance=ExtResource("7_ba2ue")]
+position = Vector2(4900, 0)
+
+[node name="Section_VeryHard_03" parent="." instance=ExtResource("8_kgd4m")]
+position = Vector2(6000, 0)
+
+[node name="Section_VeryHard_04" parent="." instance=ExtResource("9_u7x04")]
+position = Vector2(8200, 0)

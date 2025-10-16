@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=3 uid="uid://b60fbidi0scua"]
+
+[ext_resource type="Script" uid="uid://c4tjvg565f4be" path="res://victory_ui.gd" id="1_um7eb"]
+
+[node name="VictoryUI" type="CanvasLayer"]
+process_mode = 2
+visible = false
+script = ExtResource("1_um7eb")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VictoryLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "LEVEL COMPLETE!"
+
+[node name="ScoreLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Final Score: X"
+
+[node name="NextLevelButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+disabled = true
+text = "NEXT LEVEL"
+
+[node name="RestartButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "RESTART"
+
+[node name="MenuButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "MAIN MENU"

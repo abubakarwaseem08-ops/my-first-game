@@ -1,0 +1,82 @@
+[gd_scene load_steps=5 format=3 uid="uid://dpti1o7jhxuee"]
+
+[ext_resource type="PackedScene" uid="uid://chkh8i7tvqv5l" path="res://obstacle.tscn" id="1_lsesl"]
+[ext_resource type="PackedScene" uid="uid://jlbc1muft01g" path="res://obstacle2.tscn" id="2_wro8u"]
+[ext_resource type="PackedScene" uid="uid://yhflvdx11t0c" path="res://tileset/coin.tscn" id="3_6jrlb"]
+[ext_resource type="PackedScene" uid="uid://k8l2ahsifrtd" path="res://sukuna.tscn" id="4_ennwa"]
+
+[node name="Section_VeryHard_05" type="Node2D"]
+
+[node name="StartMarker" type="Marker2D" parent="."]
+
+[node name="EndMarker" type="Marker2D" parent="."]
+position = Vector2(1600, 0)
+
+[node name="Obstacles" type="Node2D" parent="."]
+
+[node name="SmallStone1" parent="Obstacles" instance=ExtResource("1_lsesl")]
+position = Vector2(150, 655)
+
+[node name="SmallStone3" parent="Obstacles" instance=ExtResource("1_lsesl")]
+position = Vector2(400, 655)
+
+[node name="SmallStone4" parent="Obstacles" instance=ExtResource("1_lsesl")]
+position = Vector2(700, 655)
+
+[node name="SmallStone5" parent="Obstacles" instance=ExtResource("1_lsesl")]
+position = Vector2(1350, 655)
+
+[node name="SmallStone2" parent="Obstacles" instance=ExtResource("1_lsesl")]
+position = Vector2(1500, 655)
+
+[node name="TallRock1" parent="Obstacles" instance=ExtResource("2_wro8u")]
+position = Vector2(500, 600)
+
+[node name="TallRock2" parent="Obstacles" instance=ExtResource("2_wro8u")]
+position = Vector2(950, 600)
+
+[node name="TallRock3" parent="Obstacles" instance=ExtResource("2_wro8u")]
+position = Vector2(1150, 600)
+
+[node name="Coins" type="Node2D" parent="."]
+
+[node name="coin" parent="Coins" instance=ExtResource("3_6jrlb")]
+position = Vector2(150, 630)
+
+[node name="coin2" parent="Coins" instance=ExtResource("3_6jrlb")]
+position = Vector2(400, 630)
+
+[node name="coin3" parent="Coins" instance=ExtResource("3_6jrlb")]
+position = Vector2(700, 460)
+
+[node name="coin4" parent="Coins" instance=ExtResource("3_6jrlb")]
+position = Vector2(1020, 600)
+
+[node name="coin5" parent="Coins" instance=ExtResource("3_6jrlb")]
+position = Vector2(1250, 630)
+
+[node name="coin6" parent="Coins" instance=ExtResource("3_6jrlb")]
+position = Vector2(1400, 630)
+
+[node name="coin7" parent="Coins" instance=ExtResource("3_6jrlb")]
+position = Vector2(1570, 690)
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="sukuna" parent="Enemies" instance=ExtResource("4_ennwa")]
+position = Vector2(340, 650)
+
+[node name="sukuna2" parent="Enemies" instance=ExtResource("4_ennwa")]
+position = Vector2(122, 630)
+
+[node name="sukuna3" parent="Enemies" instance=ExtResource("4_ennwa")]
+position = Vector2(580, 580)
+
+[node name="sukuna4" parent="Enemies" instance=ExtResource("4_ennwa")]
+position = Vector2(850, 560)
+
+[node name="sukuna5" parent="Enemies" instance=ExtResource("4_ennwa")]
+position = Vector2(1100, 620)
+
+[node name="sukuna6" parent="Enemies" instance=ExtResource("4_ennwa")]
+position = Vector2(1500, 640)

@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3sqbyhnmi4co"]
+
+[ext_resource type="PackedScene" uid="uid://jlbc1muft01g" path="res://obstacle2.tscn" id="1_bd61r"]
+[ext_resource type="PackedScene" uid="uid://yhflvdx11t0c" path="res://tileset/coin.tscn" id="2_o0bjb"]
+[ext_resource type="PackedScene" uid="uid://k8l2ahsifrtd" path="res://sukuna.tscn" id="3_ryw3d"]
+
+[node name="Section_Hard_02" type="Node2D"]
+
+[node name="StartMarker" type="Marker2D" parent="."]
+
+[node name="EndMarker" type="Marker2D" parent="."]
+position = Vector2(1200, 0)
+
+[node name="Obstacles" type="Node2D" parent="."]
+
+[node name="Platform1" parent="Obstacles" instance=ExtResource("1_bd61r")]
+position = Vector2(400, 600)
+
+[node name="Platform2" parent="Obstacles" instance=ExtResource("1_bd61r")]
+position = Vector2(700, 600)
+rotation = -0.036170945
+
+[node name="Platform3" parent="Obstacles" instance=ExtResource("1_bd61r")]
+position = Vector2(1000, 600)
+
+[node name="Coins" type="Node2D" parent="."]
+
+[node name="coin1" parent="Coins" instance=ExtResource("2_o0bjb")]
+position = Vector2(275, 500)
+
+[node name="coin2" parent="Coins" instance=ExtResource("2_o0bjb")]
+position = Vector2(550, 485)
+
+[node name="coin3" parent="Coins" instance=ExtResource("2_o0bjb")]
+position = Vector2(850, 500)
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="sukuna1" parent="Enemies" instance=ExtResource("3_ryw3d")]
+position = Vector2(275, 695)
+
+[node name="sukuna2" parent="Enemies" instance=ExtResource("3_ryw3d")]
+position = Vector2(550, 695)
+
+[node name="sukuna3" parent="Enemies" instance=ExtResource("3_ryw3d")]
+position = Vector2(850, 695)

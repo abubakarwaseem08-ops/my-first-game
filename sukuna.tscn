@@ -1,22 +1,82 @@
-[gd_scene load_steps=5 format=3 uid="uid://k8l2ahsifrtd"]
+[gd_scene load_steps=13 format=3 uid="uid://k8l2ahsifrtd"]
 
 [ext_resource type="Script" uid="uid://c0vno5l025knq" path="res://sukuna.gd" id="1_1d072"]
-[ext_resource type="Texture2D" uid="uid://soomle2wsvjw" path="res://sukuna-removebg-preview.png" id="2_fpuq5"]
+[ext_resource type="Texture2D" uid="uid://c2sylcqqh8p54" path="res://player/Bat/Flying (46x30).png" id="2_fpuq5"]
 [ext_resource type="AudioStream" uid="uid://c48irlee7i26p" path="res://game-over-arcade-6435.ogg" id="3_fpuq5"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ehg6m"]
+atlas = ExtResource("2_fpuq5")
+region = Rect2(0, 0, 46, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1fckj"]
+atlas = ExtResource("2_fpuq5")
+region = Rect2(46, 0, 46, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yyrir"]
+atlas = ExtResource("2_fpuq5")
+region = Rect2(92, 0, 46, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3pan3"]
+atlas = ExtResource("2_fpuq5")
+region = Rect2(138, 0, 46, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bx3ml"]
+atlas = ExtResource("2_fpuq5")
+region = Rect2(184, 0, 46, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5f1ni"]
+atlas = ExtResource("2_fpuq5")
+region = Rect2(230, 0, 46, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ebnhn"]
+atlas = ExtResource("2_fpuq5")
+region = Rect2(276, 0, 46, 30)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5r4dr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ehg6m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1fckj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yyrir")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3pan3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bx3ml")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5f1ni")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ebnhn")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ehg6m"]
-size = Vector2(166.88, 386.382)
+size = Vector2(375.00003, 447.47137)
 
 [node name="sukuna" type="Area2D"]
-scale = Vector2(1.475, 1.475)
+scale = Vector2(0.8, 0.8)
 script = ExtResource("1_1d072")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.26699996, 0.233)
-texture = ExtResource("2_fpuq5")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_5r4dr")
+animation = &"idle"
+frame = 4
+frame_progress = 0.5828402
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(0.26699996, 0.233)
+scale = Vector2(0.115, 0.1)
 shape = SubResource("RectangleShape2D_ehg6m")
 
 [node name="GameOverSound" type="AudioStreamPlayer2D" parent="."]
